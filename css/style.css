@@ -1153,3 +1153,531 @@ table{
 .egyfmt.suba-compact .ptable td{
   padding: 4px 5px;
 }
+
+
+/* =========================================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ ДЛЯ GITHUB PAGES / ТЕЛЕФОНА
+   Работает только на узких экранах, настольную версию не ломает
+   ========================================================= */
+
+@media (max-width: 760px) {
+  :root {
+    --font: 12px;
+  }
+
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    font-size: 12px;
+  }
+
+  .app {
+    width: 100vw;
+    min-height: 100dvh;
+    height: auto;
+    margin: 0;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .titlebar {
+    height: auto;
+    min-height: 42px;
+    padding: 8px 10px;
+    align-items: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .titlebar small {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    min-height: 0;
+  }
+
+  .sidebar,
+  .detail {
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .sidebar {
+    flex: 0 0 auto;
+  }
+
+  .detail {
+    flex: 1 1 auto;
+    min-height: 55dvh;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .panel-header .h {
+    white-space: normal;
+    line-height: 1.25;
+    font-size: 12px;
+  }
+
+  .sidebar-header {
+    display: block;
+  }
+
+  .controls-sidebar {
+    align-items: stretch;
+  }
+
+  .controls-row {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .controls-row .btn,
+  .btn {
+    min-height: 34px;
+    padding: 7px 9px;
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .controls-row-flags {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .toggle {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .legend {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    white-space: normal;
+    font-size: 11px;
+  }
+
+  .chip {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .panel-body {
+    padding: 8px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .footer {
+    height: auto;
+    min-height: 34px;
+    padding: 7px 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 11px;
+  }
+
+  .mono {
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  /* Уровень 1 и 2: сетки не должны ломать экран */
+  table {
+    font-size: 12px;
+  }
+
+  .grid td {
+    height: 34px;
+    padding: 3px 4px;
+    font-size: 11px;
+  }
+
+  .level2-grid td.l2-cell {
+    height: auto;
+    min-height: 64px;
+    padding: 4px;
+  }
+
+  .l2-card {
+    min-height: 54px;
+    gap: 3px;
+  }
+
+  .l2-card-top {
+    gap: 4px;
+  }
+
+  .l2-sat {
+    font-size: 11px;
+  }
+
+  .l2-role {
+    padding: 1px 4px;
+    font-size: 9px;
+  }
+
+  .l2-card-mid {
+    font-size: 10px;
+  }
+
+  .l2-mini {
+    padding: 1px 4px;
+    font-size: 9px;
+  }
+
+  /* События на главном экране */
+  .events {
+    padding: 7px 8px;
+  }
+
+  .events-head {
+    align-items: flex-start;
+  }
+
+  .events-list {
+    max-height: 120px;
+    font-size: 11px;
+  }
+
+  .evt-main,
+  .evt-text {
+    font-size: 11px;
+  }
+
+  /* Уровень 3: системы КА на телефоне идут в один столбец */
+  .sat3-header {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .sat3-head-right {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .sat3-strip {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .field {
+    width: 100%;
+    white-space: normal;
+    gap: 6px;
+  }
+
+  .field .lbl,
+  .field .val {
+    min-width: 0;
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  .field .lbl {
+    flex: 0 0 42%;
+  }
+
+  .field .val {
+    flex: 1 1 auto;
+  }
+
+  .sat3-grid,
+  .sat3-payload {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sysbox {
+    min-height: 70px;
+    padding: 8px;
+  }
+
+  .sysbox .name {
+    font-size: 12px;
+  }
+
+  .sysbox-st {
+    min-width: 68px;
+    font-size: 9px;
+  }
+
+  .sysbox .msg {
+    font-size: 11px;
+  }
+
+  /* Обычные модальные окна */
+  .modal {
+    left: 8px;
+    right: 8px;
+    top: 8px;
+    bottom: 8px;
+    transform: none;
+    width: auto;
+    max-width: none;
+    height: auto;
+    max-height: none;
+  }
+
+  .modal-head {
+    padding: 8px;
+  }
+
+  .modal-title {
+    font-size: 12px;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .modal-body {
+    padding: 8px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Окна 4 уровня: на телефоне почти полноэкранные */
+  #subModalRoot {
+    inset: 0;
+  }
+
+  .win,
+  .events-journal-win {
+    position: fixed !important;
+    left: 6px !important;
+    top: 6px !important;
+    right: 6px !important;
+    bottom: 6px !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    resize: none !important;
+    border-radius: 8px;
+  }
+
+  .win-head {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .win-title {
+    font-size: 12px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .win-actions {
+    flex: 0 0 auto;
+  }
+
+  .win-btn {
+    width: 32px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .win-body {
+    height: calc(100% - 47px);
+    padding: 8px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .win-scale {
+    width: 100%;
+    transform: none !important;
+  }
+
+  /* Форматы отображения внутри окон */
+  .fmt,
+  .egyfmt {
+    gap: 8px;
+  }
+
+  .fmt-title,
+  .egy-title {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .fmt-status,
+  .egy-line {
+    gap: 6px;
+  }
+
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+
+  .tab-btn {
+    flex: 0 0 auto;
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+
+  .sheet {
+    padding: 8px;
+  }
+
+  .sheet-grid,
+  .egy-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sheet-block,
+  .egy-box {
+    padding: 8px;
+  }
+
+  .sheet-h,
+  .egy-box-h {
+    font-size: 12px;
+  }
+
+  .egy-row,
+  .egy-row2 {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .egy-lbl,
+  .egy-note,
+  .egy-crit,
+  .egy-foot,
+  .egy-footnote {
+    font-size: 11px;
+  }
+
+  .egy-val {
+    text-align: left;
+    font-size: 11px;
+  }
+
+  /* Большие таблицы: лучше прокрутка, чем нечитаемое сжатие */
+  .egy-sheet,
+  .events-journal-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .egy-table {
+    min-width: 680px;
+  }
+
+  .egy-table td {
+    padding: 4px 5px;
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .ptable {
+    min-width: 680px;
+    font-size: 10.5px;
+  }
+
+  .ptable th,
+  .ptable td {
+    padding: 4px 5px;
+  }
+
+  .fmt-table {
+    min-width: 680px;
+    font-size: 11px;
+  }
+
+  .fmt-table th,
+  .fmt-table td {
+    padding: 5px 6px;
+  }
+
+  /* Журнал событий: таблицу оставляем прокручиваемой */
+  .evt-head-row,
+  .evt-full {
+    min-width: 760px;
+    grid-template-columns: 76px 96px 70px 68px 96px 1fr;
+    font-size: 11px;
+  }
+
+  .evt-head-row > div,
+  .evt-full > div {
+    padding: 5px 6px;
+  }
+}
+
+/* Очень узкие телефоны */
+@media (max-width: 420px) {
+  :root {
+    --font: 11px;
+  }
+
+  .titlebar {
+    font-size: 11px;
+  }
+
+  .titlebar small {
+    font-size: 10px;
+  }
+
+  .btn {
+    font-size: 11px;
+    padding: 6px 7px;
+  }
+
+  .grid td {
+    font-size: 10px;
+  }
+
+  .legend {
+    font-size: 10px;
+  }
+
+  .chip {
+    font-size: 10px;
+  }
+
+  .egy-table {
+    min-width: 620px;
+  }
+
+  .ptable,
+  .fmt-table {
+    min-width: 620px;
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>АРМ группировки «ГЕОИД-150» — модульная структура</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="app">
+    <div class="titlebar">
+      <div>АРМ группировки «ГЕОИД-150» <small>— 1) плоскости → 2) КА → 3) системы → 4) параметры</small></div>
+      <div class="mono" id="clock">--:--:--</div>
+    </div>
+
+    <div class="content">
+      <div class="sidebar">
+        <div class="panel-header sidebar-header">
+          <div class="h">Уровень 1: плоскости</div>
+          <div class="controls controls-sidebar">
+            <div class="controls-row">
+              <button class="btn" id="btnUp" disabled>← Назад</button>
+              <button class="btn" id="btnReset">Сброс модели</button>
+              <button class="btn" id="btnInject">Смоделировать инцидент</button>
+            </div>
+            <div class="controls-row controls-row-flags">
+              <label class="toggle"><input id="onlyProblems" type="checkbox"/>Показывать проблемы</label>
+              <label class="toggle"><input id="autoTick" type="checkbox" checked/>Автообновление</label>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body" id="planesPanel"></div>
+
+        <div class="events" id="eventsBox">
+          <div class="events-head">
+            <div class="h">События</div>
+            <button class="btn btn-evt" id="btnEventsJournal" type="button">Журнал</button>
+          </div>
+          <div class="events-list" id="eventsList"></div>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="panel-header">
+          <div class="h" id="detailTitle">Уровень 1: выберите плоскость слева</div>
+          <div class="legend">
+            <div class="chip"><span class="sw" style="background: var(--ok)"></span>Норма</div>
+            <div class="chip"><span class="sw" style="background: var(--warn)"></span>Предупреждение</div>
+            <div class="chip"><span class="sw" style="background: var(--alarm)"></span>Авария / Нет ТМИ</div>
+            <div class="chip"><span class="sw" style="background: var(--inactive)"></span>Не в эксплуатации</div>
+          </div>
+        </div>
+        <div class="panel-body" id="detailPanel"></div>
+        <div class="footer">
+          <div id="statusLine">Готово</div>
+          <div class="mono" id="footerMeta">P=14 · N=22 · Всего=308</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="subModalRoot"></div>
+
+  <script type="module" src="js/core/app.js"></script>
+</body>
+</html>
